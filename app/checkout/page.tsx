@@ -53,7 +53,7 @@ export default function CheckoutPage() {
     address: "",
     city: "",
     state: "",
-    zip: "",
+    zipCode: "",
     country: "",
     paymentMethod: "", // This field is not used in the current form, but kept for consistency
     cardNumber: "",
@@ -107,7 +107,7 @@ export default function CheckoutPage() {
       !formData.lastName ||
       !formData.address ||
       !formData.city ||
-      !formData.zip ||
+      !formData.zipCode ||
       !formData.country ||
       !formData.cardNumber ||
       !formData.expiryDate ||
@@ -269,9 +269,9 @@ export default function CheckoutPage() {
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="first-name">First Name</Label>
+              <Label htmlFor="firstName">First Name</Label>
               <Input
-                id="first-name"
+                id="firstName"
                 placeholder="John"
                 value={formData.firstName}
                 onChange={handleInputChange}
@@ -279,8 +279,8 @@ export default function CheckoutPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="last-name">Last Name</Label>
-              <Input id="last-name" placeholder="Doe" value={formData.lastName} onChange={handleInputChange} required />
+              <Label htmlFor="lastName">Last Name</Label>
+              <Input id="lastName" placeholder="Doe" value={formData.lastName} onChange={handleInputChange} required />
             </div>
             <div className="space-y-2 md:col-span-2">
               <Label htmlFor="address">Address</Label>
@@ -301,8 +301,8 @@ export default function CheckoutPage() {
               <Input id="state" placeholder="NY" value={formData.state} onChange={handleInputChange} />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="zip">Zip/Postal Code</Label>
-              <Input id="zip" placeholder="10001" value={formData.zip} onChange={handleInputChange} required />
+              <Label htmlFor="zipCode">Zip/Postal Code</Label>
+              <Input id="zipCode" placeholder="10001" value={formData.zip} onChange={handleInputChange} required />
             </div>
             <div className="space-y-2">
               <Label htmlFor="country">Country</Label>
@@ -488,9 +488,9 @@ export default function CheckoutPage() {
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="card-number">Card Number</Label>
+              <Label htmlFor="cardNumber">Card Number</Label>
               <Input
-                id="card-number"
+                id="cardNumber"
                 placeholder="XXXX-XXXX-XXXX-XXXX"
                 value={formData.cardNumber}
                 onChange={handleInputChange}
@@ -498,9 +498,9 @@ export default function CheckoutPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="expiry-date">Expiry Date</Label>
+              <Label htmlFor="expiryDate">Expiry Date</Label>
               <Input
-                id="expiry-date"
+                id="expiryDate"
                 placeholder="MM/YY"
                 value={formData.expiryDate}
                 onChange={handleInputChange}
@@ -512,9 +512,9 @@ export default function CheckoutPage() {
               <Input id="cvv" placeholder="XXX" value={formData.cvv} onChange={handleInputChange} required />
             </div>
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="card-name">Name on Card</Label>
+              <Label htmlFor="cardName">Name on Card</Label>
               <Input
-                id="card-name"
+                id="cardName"
                 placeholder="John Doe"
                 value={formData.cardName}
                 onChange={handleInputChange}
